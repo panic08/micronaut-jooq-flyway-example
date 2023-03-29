@@ -32,9 +32,8 @@ public class PersonController {
 
     //not working
     @Post("/person/new")
-    public HttpResponse<?> createPerson(@RequestAttribute("name") String name,
-                                        @RequestAttribute("surname") String surname, @RequestAttribute("age") int age){
-    service.createPerson(name, surname, age);
+    public HttpResponse<?> createPerson(@Body Person person){
+    service.createPerson(person.getName(), person.getSurname(), person.getAge());
     return HttpResponse.noContent();
     }
 

@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.jooq.impl.DSL.table;
+import static org.jooq.impl.DSL.*;
 
 @Singleton
 public class Service {
@@ -28,7 +28,7 @@ public class Service {
     }
     @Transactional
     public void createPerson(String name, String surname, int age){
-        dslContext.insertInto(table("person")).values("default, "+name+", "+surname+", "+age);
+        dslContext.insertInto(table("person")).values(defaultValue(), name, surname, age).execute();
 
     }
 
