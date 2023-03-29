@@ -1,0 +1,26 @@
+micronaut:
+  application:
+    name: demo7
+  server:
+    port: 9000
+datasources:
+  default:
+    driver-class-name: org.postgresql.Driver
+    db-type: postgres
+    dialect: POSTGRES
+    username: 'postgres'
+    url: 'jdbc:postgresql://localhost:5432/disa'
+    password: 1234
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+flyway:
+  datasources:
+    default:
+      enabled: true
+      baseline-on-migrate: true
+jooq:
+  datasources:
+      sql-dialect: 'POSTGRES'
