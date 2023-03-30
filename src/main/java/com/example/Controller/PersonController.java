@@ -30,7 +30,7 @@ public class PersonController {
     }
 
 
-    //not working
+
     @Post("/person/new")
     public HttpResponse<?> createPerson(@Body Person person){
     service.createPerson(person.getName(), person.getSurname(), person.getAge());
